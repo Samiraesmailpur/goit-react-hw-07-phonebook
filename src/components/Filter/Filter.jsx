@@ -2,10 +2,10 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { LabelBtn, InputFilter } from './Filter.styled';
 import { updateFilter } from '../../redux/filterSlice';
-import { getFilter } from '../../redux/selectors';
+import { selectFilter } from '../../redux/selectors';
 
 const Filter = () => {
-  const state = useSelector(getFilter);
+  const state = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   const changeFilter = e => {

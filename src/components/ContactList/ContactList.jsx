@@ -8,13 +8,13 @@ import {
 } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/operations';
-import { getContacts, getFilter } from '../../redux/selectors';
+import { selectContacts, selectFilter } from '../../redux/selectors';
 
 const ContactList = () => {
   const dispatch = useDispatch();
-  const { contacts } = useSelector(getContacts);
+  const { contacts } = useSelector(selectContacts);
 
-  const stateFilter = useSelector(getFilter);
+  const stateFilter = useSelector(selectFilter);
 
   const filterNames = contacts.filter(contact => {
     return contact.name

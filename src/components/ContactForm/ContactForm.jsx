@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import { addTask } from '../../redux/contactsSlice';
 import { addContact } from 'redux/operations';
-import { getContacts } from '../../redux/selectors';
+import { selectContacts } from '../../redux/selectors';
 
 const inputNameId = nanoid();
 const inputNumberId = nanoid();
@@ -15,7 +15,7 @@ const ContactForm = () => {
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
 
-  const { contacts } = useSelector(getContacts);
+  const { contacts } = useSelector(selectContacts);
 
   const checkIfNameIsUnique = name => {
     return contacts.every(contact => {
