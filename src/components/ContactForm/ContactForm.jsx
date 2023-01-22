@@ -51,7 +51,6 @@ const ContactForm = () => {
         addContact({
           name: name,
           number: number,
-          id: nanoid(),
         })
       );
     }
